@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class ScreenshotPreventingView: UIView {
+public final class ScreenshotPreventingView: UIView {
 
     // MARK: - 📌 Constants
     // MARK: - 🔶 Properties
 
-    var preventScreenCapture = true {
+    public var preventScreenCapture = true {
         didSet {
             textField.isSecureTextEntry = preventScreenCapture
         }
@@ -29,7 +29,7 @@ final class ScreenshotPreventingView: UIView {
     // MARK: - 👆 Actions
     // MARK: - 🔨 Initialization
 
-    init(contentView: UIView) {
+    public init(contentView: UIView) {
         self.contentView = contentView
         super.init(frame: .zero)
 
@@ -72,7 +72,7 @@ final class ScreenshotPreventingView: UIView {
 
     // MARK: - 🚌 Public Methods
 
-    func setup(contentView: UIView) {
+    public func setup(contentView: UIView) {
         self.contentView?.removeFromSuperview()
         self.contentView = contentView
 
