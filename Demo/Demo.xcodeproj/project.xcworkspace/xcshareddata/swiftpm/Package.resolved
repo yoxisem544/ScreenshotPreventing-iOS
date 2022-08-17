@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yoxisem544/ScreenshotPreventing.git",
       "state" : {
-        "revision" : "5c4af087b50d9a6782f847c36698c386ad57965f",
-        "version" : "1.0.1"
+        "revision" : "5ea238eeff098ee75174afa144e68b0aaa34f3e0",
+        "version" : "1.0.2"
       }
     },
     {
