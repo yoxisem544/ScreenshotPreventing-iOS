@@ -29,7 +29,7 @@ public final class ScreenshotPreventingView: UIView {
     // MARK: - 👆 Actions
     // MARK: - 🔨 Initialization
 
-    public init(contentView: UIView) {
+    public init(contentView: UIView? = nil) {
         self.contentView = contentView
         super.init(frame: .zero)
 
