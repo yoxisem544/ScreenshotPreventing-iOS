@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "screenshotpreventing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yoxisem544/ScreenshotPreventing.git",
+      "state" : {
+        "revision" : "5c4af087b50d9a6782f847c36698c386ad57965f",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "07c5d1f6044701d97e94dc11157259e8811977be"
+      }
+    }
+  ],
+  "version" : 2
+}
