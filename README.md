@@ -24,7 +24,7 @@ dependencies: [
 
 Clone this project, then
 
-```
+```shell
 cd ScreenshotPreventing
 open Demo/Demo.xcodeproj
 ```
