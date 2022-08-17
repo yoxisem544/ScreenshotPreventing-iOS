@@ -33,7 +33,7 @@ Then build for any iOS simulator to test this out.
 
 By triggering screenshot on simulator, look for `Simulator > Device > Trigger Screenshot`.
 
-![](./Assets/demo.gif | width=470)
+<img src="./Assets/demo.gif" width="470" />
 
 ## Example
 
