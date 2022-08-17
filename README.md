@@ -1,5 +1,7 @@
 # ScreenshotPreventing
 
+A simple wrapper view that is able to prevent screenshot or screen recording on iOS.
+
 ## Requirement
 
 - iOS 12+
