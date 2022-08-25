@@ -1,0 +1,25 @@
+PODS:
+  - ScreenshotPreventing (1.1.0):
+    - ScreenshotPreventing/Core (= 1.1.0)
+  - ScreenshotPreventing/Core (1.1.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - ScreenshotPreventing (from `../`)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  ScreenshotPreventing:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ScreenshotPreventing: 10dcac9e5d4f281f298381b4bba31ad1ffbdba8b
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 1443506dd448b7bf9c11cc28dc3d6a4b79d54b04
+
+COCOAPODS: 1.11.2
