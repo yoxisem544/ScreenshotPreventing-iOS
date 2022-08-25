@@ -18,7 +18,7 @@ To integrate ScreenshotPreventing into your Xcode project using Swift Package Ma
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.0.2"))
+    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
@@ -87,5 +87,5 @@ Use `RxScreenshotPreventing` pacakge for this extension.
 ```swift
 whetherOrNotToPreventScreenshotObservable
     .bind(to: screenshotPreventingView.rx.preventScreenCapture)
-    .dispose(by: bag)
+    .disposed(by: bag)
 ```
