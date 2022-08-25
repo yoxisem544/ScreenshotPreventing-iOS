@@ -27,9 +27,9 @@ dependencies: [
 For ScreenshotPreventing, use the following entry in your Podfile:
 
 ```ruby
-pod 'ScreenshotPreventing', '~> 1.1.0'
+pod 'ScreenshotPreventing', '~> 1.2.1'
 # or 
-pod 'ScreenshotPreventing/RxSwift', '~> 1.1.0'
+pod 'ScreenshotPreventing/RxSwift', '~> 1.2.1'
 ```
 
 ## Demo Project
