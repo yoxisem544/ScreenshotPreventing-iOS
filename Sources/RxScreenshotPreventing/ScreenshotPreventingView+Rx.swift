@@ -6,8 +6,11 @@
 //
 
 import RxSwift
-import ScreenshotPreventing
 import RxCocoa
+
+#if !COCOAPODS
+    import ScreenshotPreventing
+#endif
 
 extension Reactive where Base: ScreenshotPreventingView {
 
