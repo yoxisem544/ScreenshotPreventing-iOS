@@ -27,6 +27,8 @@ Pod::Spec.new do |s|
 
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Sources/RxScreenshotPreventing/"
+    ss.dependency "ScreenshotPreventing/Core"
     ss.dependency "RxSwift", "~> 6.0"
+    ss.dependency "RxCocoa", "~> 6.0"
   end
 end
