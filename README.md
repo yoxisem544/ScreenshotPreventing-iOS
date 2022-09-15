@@ -92,7 +92,7 @@ class ViewController: UIViewController {
 
 If you use RxSwift in your project, there is a Rx extension to drive `preventScreenCapture` property on `ScreenshotPreventingView`.
 
-Use `RxScreenshotPreventing` pacakge for this extension.
+Use `RxScreenshotPreventing` package for this extension.
 
 ```swift
 whetherOrNotToPreventScreenshotObservable
