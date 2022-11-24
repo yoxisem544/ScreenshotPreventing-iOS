@@ -5,20 +5,20 @@
 //  Created by David on 2022/8/17.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class TagView: UIView {
 
     // MARK: - 🔶 Properties
 
-    var number: Int = 0 {
+    var number = 0 {
         didSet {
             numberLabel.text = "\(number)"
         }
     }
 
-    var word: String = "" {
+    var word = "" {
         didSet {
             wordLabel.text = word
         }
@@ -36,12 +36,13 @@ final class TagView: UIView {
         self.init(frame: .zero)
     }
 
-    private override init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
 
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

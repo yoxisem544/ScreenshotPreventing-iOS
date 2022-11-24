@@ -5,9 +5,9 @@
 //  Created by David on 2022/8/17.
 //
 
-import UIKit
-import SnapKit
 import ScreenshotPreventing
+import SnapKit
+import UIKit
 
 final class ViewController: UIViewController {
 
@@ -35,14 +35,14 @@ final class ViewController: UIViewController {
         }
         yayaLabel.textAlignment = .center
 
-        let one = ["a", "b", "c", "d", "e", "f"].enumerated().map { (index, word) -> TagView in
+        let one = ["a", "b", "c", "d", "e", "f"].enumerated().map { index, word -> TagView in
             let hello = TagView()
             hello.number = index + 1
             hello.word = word
             return hello
         }
 
-        let two = ["a", "b", "c", "d", "e", "f"].enumerated().map { (index, word) -> TagView in
+        let two = ["a", "b", "c", "d", "e", "f"].enumerated().map { index, word -> TagView in
             let hello = TagView()
             hello.number = index + 6
             hello.word = word

@@ -1,6 +1,6 @@
 //
 //  ScreenshotPreventingView.swift
-//  
+//
 //
 //  Created by David on 2022/8/17.
 //

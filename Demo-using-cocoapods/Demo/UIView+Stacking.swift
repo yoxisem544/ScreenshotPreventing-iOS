@@ -85,11 +85,12 @@ extension UIStackView {
         return self
     }
 }
+
 extension UIStackView {
 
     @discardableResult
     open func withMargins(_ margins: UIEdgeInsets) -> UIStackView {
-        self.layoutMargins = margins
+        layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true
         return self
     }
@@ -122,7 +123,3 @@ extension UIStackView {
         return self
     }
 }
-
-
-
-
