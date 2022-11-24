@@ -1,15 +1,15 @@
 //
 //  ScreenshotPreventingView+Rx.swift
-//  
+//
 //
 //  Created by David on 2022/8/17.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 #if !COCOAPODS
-    import ScreenshotPreventing
+import ScreenshotPreventing
 #endif
 
 extension Reactive where Base: ScreenshotPreventingView {

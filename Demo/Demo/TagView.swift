@@ -5,51 +5,47 @@
 //  Created by David on 2022/8/17.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class TagView: UIView {
 
-    // MARK: - 📌 Constants
     // MARK: - 🔶 Properties
 
-    var number: Int = 0 {
+    var number = 0 {
         didSet {
             numberLabel.text = "\(number)"
         }
     }
 
-    var word: String = "" {
+    var word = "" {
         didSet {
             wordLabel.text = word
         }
     }
 
-    // MARK: - 🎨 Style
     // MARK: - 🧩 Subviews
 
     private let numberContainer = UIView()
     private let numberLabel = UILabel()
     private let wordLabel = UILabel()
 
-    // MARK: - 👆 Actions
     // MARK: - 🔨 Initialization
 
     convenience init() {
         self.init(frame: .zero)
     }
 
-    private override init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
 
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - 🖼 View Lifecycle
 
     // MARK: - 🏗 UI
 
@@ -76,12 +72,4 @@ final class TagView: UIView {
         }
         wordLabel.font = .systemFont(ofSize: 16, weight: .bold)
     }
-
-    // MARK: - 🚌 Public Methods
-    // MARK: - 🔒 Private Methods
-
 }
-
-// MARK: - 🧶 Extensions
-
-
