@@ -9,7 +9,6 @@ import UIKit
 
 public final class ScreenshotPreventingView: UIView {
 
-    // MARK: - 📌 Constants
     // MARK: - 🔶 Properties
 
     public var preventScreenCapture = true {
@@ -18,15 +17,18 @@ public final class ScreenshotPreventingView: UIView {
         }
     }
 
+    // MARK: - 🧩 Subviews
+
     private var contentView: UIView?
+
     private let textField = UITextField()
 
-    private let recognizer = HiddenContainerRecognizer()
     private lazy var hiddenContentContainer: UIView? = try? recognizer.getHiddenContainer(from: textField)
 
-    // MARK: - 🎨 Style
-    // MARK: - 🧩 Subviews
     // MARK: - 👆 Actions
+
+    private let recognizer = HiddenContainerRecognizer()
+
     // MARK: - 🔨 Initialization
 
     public init(contentView: UIView? = nil) {
@@ -36,11 +38,10 @@ public final class ScreenshotPreventingView: UIView {
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - 🖼 View Lifecycle
 
     // MARK: - 🏗 UI
 
@@ -48,7 +49,21 @@ public final class ScreenshotPreventingView: UIView {
         textField.backgroundColor = .clear
         textField.isUserInteractionEnabled = false
 
-        guard let container = hiddenContentContainer else { return }
+        guard let container = hiddenContentContainer else {
+            // If not recognize de hidden Container you can use an contentView
+
+            guard let contentView = contentView else { return }
+            addSubview(contentView)
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+
+            NSLayoutConstraint.activate([
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+            return
+        }
 
         addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -91,9 +106,4 @@ public final class ScreenshotPreventingView: UIView {
             bottomConstraint
         ])
     }
-
-    // MARK: - 🔒 Private Methods
-
 }
-
-// MARK: - 🧶 Extensions

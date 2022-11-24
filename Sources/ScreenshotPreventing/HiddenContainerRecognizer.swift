@@ -35,7 +35,9 @@ struct HiddenContainerRecognizer {
             return "_UITextLayoutCanvasView"
         }
 
-        if #available(iOS 14, *) {
+        // TODO: - Not work in iOS 13
+
+        if #available(iOS 13, *) {
             return "_UITextFieldCanvasView"
         }
 
@@ -47,4 +49,3 @@ struct HiddenContainerRecognizer {
         throw Error.unsupportedOSVersion(version: currentIOSVersion)
     }
 }
-

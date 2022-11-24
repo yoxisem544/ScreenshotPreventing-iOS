@@ -10,7 +10,6 @@ import SnapKit
 
 final class TagView: UIView {
 
-    // MARK: - 📌 Constants
     // MARK: - 🔶 Properties
 
     var number: Int = 0 {
@@ -25,14 +24,12 @@ final class TagView: UIView {
         }
     }
 
-    // MARK: - 🎨 Style
     // MARK: - 🧩 Subviews
 
     private let numberContainer = UIView()
     private let numberLabel = UILabel()
     private let wordLabel = UILabel()
 
-    // MARK: - 👆 Actions
     // MARK: - 🔨 Initialization
 
     convenience init() {
@@ -48,8 +45,6 @@ final class TagView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - 🖼 View Lifecycle
 
     // MARK: - 🏗 UI
 
@@ -76,12 +71,4 @@ final class TagView: UIView {
         }
         wordLabel.font = .systemFont(ofSize: 16, weight: .bold)
     }
-
-    // MARK: - 🚌 Public Methods
-    // MARK: - 🔒 Private Methods
-
 }
-
-// MARK: - 🧶 Extensions
-
-

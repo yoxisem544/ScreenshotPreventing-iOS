@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import ScreenshotPreventing
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     let stack = UIView.hstack([], spacing: 24, distribution: .fillEqually)
     lazy var hello = ScreenshotPreventingView(contentView: stack)
@@ -74,4 +74,3 @@ class ViewController: UIViewController {
         yayaLabel.text = "prevent capture \(aSwitch.isOn)"
     }
 }
-
