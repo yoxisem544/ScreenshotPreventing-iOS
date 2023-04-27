@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ScreenshotPreventing"
-  s.version = "1.2.1"
+  s.version = "1.2.2"
   s.summary = "Prevent screenshot or screenrecord on iOS devices"
   s. description = <<-EOS
   ScreenshotPreventing can help you to wrap views 

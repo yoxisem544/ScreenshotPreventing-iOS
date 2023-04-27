@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "screenshotpreventing",
+      "identity" : "rxswift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yoxisem544/ScreenshotPreventing.git",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
-        "revision" : "5ea238eeff098ee75174afa144e68b0aaa34f3e0",
-        "version" : "1.0.2"
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
       }
     },
     {

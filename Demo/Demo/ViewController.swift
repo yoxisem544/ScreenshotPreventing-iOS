@@ -12,28 +12,31 @@ import ScreenshotPreventing
 class ViewController: UIViewController {
 
     let stack = UIView.hstack([], spacing: 24, distribution: .fillEqually)
-    lazy var hello = ScreenshotPreventingView(contentView: stack)
+    lazy var screenshotPreventView = ScreenshotPreventingView(contentView: stack)
+//    lazy var screenshotPreventView = ScreenshotPreventingView(contentView: tableView) // you can use this to test scrolling cases
 
-    let aSwitch = UISwitch()
-    let yayaLabel = UILabel()
+    let toggleSwitch = UISwitch()
+    let hintLabel = UILabel()
+
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        view.addSubview(aSwitch)
-        aSwitch.snp.makeConstraints { make in
+        view.addSubview(toggleSwitch)
+        toggleSwitch.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-24)
         }
-        aSwitch.addTarget(self, action: #selector(hello(_:)), for: .valueChanged)
+        toggleSwitch.addTarget(self, action: #selector(hello(_:)), for: .valueChanged)
 
-        view.addSubview(yayaLabel)
-        yayaLabel.snp.makeConstraints { make in
+        view.addSubview(hintLabel)
+        hintLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.bottom.equalTo(aSwitch.snp.top).offset(-24)
+            make.bottom.equalTo(toggleSwitch.snp.top).offset(-24)
         }
-        yayaLabel.textAlignment = .center
+        hintLabel.textAlignment = .center
 
         let one = ["a", "b", "c", "d", "e", "f"].enumerated().map { (index, word) -> TagView in
             let hello = TagView()
@@ -58,20 +61,36 @@ class ViewController: UIViewController {
         stack.layer.cornerRadius = 24
         stack.backgroundColor = .yellow
 
-        view.addSubview(hello)
-        hello.translatesAutoresizingMaskIntoConstraints = false
-        hello.snp.makeConstraints { make in
+        view.addSubview(screenshotPreventView)
+        screenshotPreventView.translatesAutoresizingMaskIntoConstraints = false
+        screenshotPreventView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(48)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(24)
+            make.bottom.equalTo(hintLabel.snp.top).offset(-12).priority(.low)
         }
 
-        aSwitch.isOn = hello.preventScreenCapture
-        yayaLabel.text = "prevent capture \(aSwitch.isOn)"
+        toggleSwitch.isOn = screenshotPreventView.preventScreenCapture
+        hintLabel.text = "prevent capture \(toggleSwitch.isOn)"
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     @objc func hello(_ aSwitch: UISwitch) {
-        hello.preventScreenCapture = aSwitch.isOn
-        yayaLabel.text = "prevent capture \(aSwitch.isOn)"
+        screenshotPreventView.preventScreenCapture = aSwitch.isOn
+        hintLabel.text = "prevent capture \(aSwitch.isOn)"
     }
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        100
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "\(indexPath.row)"
+        return cell
+    }
+}

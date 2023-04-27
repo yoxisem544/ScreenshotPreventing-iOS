@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637A73D229FAC2D2005D1669 /* ScreenshotPreventing in Frameworks */ = {isa = PBXBuildFile; productRef = 637A73D129FAC2D2005D1669 /* ScreenshotPreventing */; };
 		63E2DCF528ACA9D1000387F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2DCF428ACA9D1000387F1 /* AppDelegate.swift */; };
 		63E2DCF728ACA9D1000387F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2DCF628ACA9D1000387F1 /* SceneDelegate.swift */; };
 		63E2DCF928ACA9D1000387F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2DCF828ACA9D1000387F1 /* ViewController.swift */; };
@@ -16,10 +17,10 @@
 		63E2DD0928ACAA17000387F1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2DD0828ACAA17000387F1 /* TagView.swift */; };
 		63E2DD0B28ACAA28000387F1 /* UIView+Stacking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2DD0A28ACAA28000387F1 /* UIView+Stacking.swift */; };
 		63E2DD0E28ACAA44000387F1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63E2DD0D28ACAA44000387F1 /* SnapKit */; };
-		63E2DD1128ACAA61000387F1 /* ScreenshotPreventing in Frameworks */ = {isa = PBXBuildFile; productRef = 63E2DD1028ACAA61000387F1 /* ScreenshotPreventing */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		637A73CF29FAC289005D1669 /* ScreenshotPreventing-iOS */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ScreenshotPreventing-iOS"; path = ../..; sourceTree = "<group>"; };
 		63E2DCF128ACA9D1000387F1 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E2DCF428ACA9D1000387F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E2DCF628ACA9D1000387F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E2DD1128ACAA61000387F1 /* ScreenshotPreventing in Frameworks */,
+				637A73D229FAC2D2005D1669 /* ScreenshotPreventing in Frameworks */,
 				63E2DD0E28ACAA44000387F1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,11 +46,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		637A73D029FAC2D2005D1669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63E2DCE828ACA9D1000387F1 = {
 			isa = PBXGroup;
 			children = (
 				63E2DCF328ACA9D1000387F1 /* Demo */,
 				63E2DCF228ACA9D1000387F1 /* Products */,
+				637A73D029FAC2D2005D1669 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +82,7 @@
 				63E2DCFD28ACA9D2000387F1 /* Assets.xcassets */,
 				63E2DCFF28ACA9D2000387F1 /* LaunchScreen.storyboard */,
 				63E2DD0228ACA9D2000387F1 /* Info.plist */,
+				637A73CF29FAC289005D1669 /* ScreenshotPreventing-iOS */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -95,7 +105,7 @@
 			name = Demo;
 			packageProductDependencies = (
 				63E2DD0D28ACAA44000387F1 /* SnapKit */,
-				63E2DD1028ACAA61000387F1 /* ScreenshotPreventing */,
+				637A73D129FAC2D2005D1669 /* ScreenshotPreventing */,
 			);
 			productName = Demo;
 			productReference = 63E2DCF128ACA9D1000387F1 /* Demo.app */;
@@ -127,7 +137,6 @@
 			mainGroup = 63E2DCE828ACA9D1000387F1;
 			packageReferences = (
 				63E2DD0C28ACAA44000387F1 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				63E2DD0F28ACAA61000387F1 /* XCRemoteSwiftPackageReference "ScreenshotPreventing" */,
 			);
 			productRefGroup = 63E2DCF228ACA9D1000387F1 /* Products */;
 			projectDirPath = "";
@@ -315,6 +324,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +353,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,26 +399,17 @@
 				kind = branch;
 			};
 		};
-		63E2DD0F28ACAA61000387F1 /* XCRemoteSwiftPackageReference "ScreenshotPreventing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yoxisem544/ScreenshotPreventing.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		637A73D129FAC2D2005D1669 /* ScreenshotPreventing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenshotPreventing;
+		};
 		63E2DD0D28ACAA44000387F1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 63E2DD0C28ACAA44000387F1 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		63E2DD1028ACAA61000387F1 /* ScreenshotPreventing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 63E2DD0F28ACAA61000387F1 /* XCRemoteSwiftPackageReference "ScreenshotPreventing" */;
-			productName = ScreenshotPreventing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

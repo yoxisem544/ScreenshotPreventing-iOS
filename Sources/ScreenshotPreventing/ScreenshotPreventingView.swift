@@ -18,6 +18,17 @@ public final class ScreenshotPreventingView: UIView {
         }
     }
 
+    /// Changing isUserInteractionEnabled value will also affect
+    /// isUserInteractionEnabled value of hidden content container.
+    ///
+    /// To sync isUserInteractionEnabled value is to prevent a freeze bug
+    /// that is going to happen if you add a scrollview inside `ScreenshotPreventingView`.
+    public override var isUserInteractionEnabled: Bool {
+        didSet {
+            hiddenContentContainer?.isUserInteractionEnabled = isUserInteractionEnabled
+        }
+    }
+
     private var contentView: UIView?
     private let textField = UITextField()
 
@@ -79,6 +90,7 @@ public final class ScreenshotPreventingView: UIView {
         guard let container = hiddenContentContainer else { return }
 
         container.addSubview(contentView)
+        container.isUserInteractionEnabled = isUserInteractionEnabled
         contentView.translatesAutoresizingMaskIntoConstraints = false
 
         let bottomConstraint = contentView.bottomAnchor.constraint(equalTo: container.bottomAnchor)
