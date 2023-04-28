@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ScreenshotPreventing"
-  s.version = "1.2.2"
+  s.version = "1.3.0"
   s.summary = "Prevent screenshot or screenrecord on iOS devices"
   s. description = <<-EOS
   ScreenshotPreventing can help you to wrap views 
@@ -30,5 +30,10 @@ Pod::Spec.new do |s|
     ss.dependency "ScreenshotPreventing/Core"
     ss.dependency "RxSwift", "~> 6.0"
     ss.dependency "RxCocoa", "~> 6.0"
+  end
+
+  s.subspec "SwiftUI" do |ss|
+    ss.source_files = "Sources/ScreenshotPreventingSwiftUI/"
+    ss.dependency "ScreenshotPreventing/Core"
   end
 end
