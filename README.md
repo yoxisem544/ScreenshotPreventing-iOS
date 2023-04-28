@@ -20,7 +20,7 @@ To integrate ScreenshotPreventing into your Xcode project using Swift Package Ma
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.3.0"))
+    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.4.0"))
 ]
 ```
 
@@ -29,11 +29,11 @@ dependencies: [
 For ScreenshotPreventing, use the following entry in your Podfile:
 
 ```ruby
-pod 'ScreenshotPreventing', '~> 1.3.0'
+pod 'ScreenshotPreventing', '~> 1.4.0'
 # or 
-pod 'ScreenshotPreventing/RxSwift', '~> 1.3.0'
+pod 'ScreenshotPreventing/RxSwift', '~> 1.4.0'
 # or SwiftUI
-pod 'ScreenshotPreventing/SwiftUI', '~> 1.3.0'
+pod 'ScreenshotPreventing/SwiftUI', '~> 1.4.0'
 ```
 
 ## Demo Project
