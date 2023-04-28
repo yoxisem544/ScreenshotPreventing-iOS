@@ -4,7 +4,9 @@ A simple wrapper view that is able to prevent screenshot or screen recording on 
 
 ## Requirement
 
-- iOS 12+
+iOS 12+.
+
+SwiftUI will need iOS 13+.
 
 ## Installation
 
@@ -18,7 +20,7 @@ To integrate ScreenshotPreventing into your Xcode project using Swift Package Ma
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.1.0"))
+    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.3.0"))
 ]
 ```
 
@@ -27,9 +29,11 @@ dependencies: [
 For ScreenshotPreventing, use the following entry in your Podfile:
 
 ```ruby
-pod 'ScreenshotPreventing', '~> 1.2.1'
+pod 'ScreenshotPreventing', '~> 1.3.0'
 # or 
-pod 'ScreenshotPreventing/RxSwift', '~> 1.2.1'
+pod 'ScreenshotPreventing/RxSwift', '~> 1.3.0'
+# or SwiftUI
+pod 'ScreenshotPreventing/SwiftUI', '~> 1.3.0'
 ```
 
 ## Demo Project
@@ -38,7 +42,10 @@ Clone this project, then
 
 ```shell
 cd ScreenshotPreventing
+# For normal demo
 open Demo/Demo.xcodeproj
+# For SwiftUI demo
+open Demo-SwiftUI/Demo-SwiftUI.xcodeproj
 ```
 
 Then build for any iOS simulator to test this out.
@@ -84,6 +91,30 @@ class ViewController: UIViewController {
 
         // add to subview here.
         container.setup(contentView: stack)
+    }
+}
+```
+
+## SwiftUI Usage
+
+Simply wrap your view inside `ScreenshotPrevent` View. 
+You should pass in a isProtected binding to toggle on whether to prevent screenshot or not.
+
+```swift
+import SwiftUI
+import ScreenshotPreventingSwiftUI
+
+struct ContentView: View {
+
+    @State private var preventScreenShot = false
+
+    var body: some View {
+        ScreenshotPrevent(isProtected: $preventScreenShot) {
+            Text("Hello")
+                .padding()
+                .background(Color.yellow)
+                .cornerRadius(12)
+        }
     }
 }
 ```
