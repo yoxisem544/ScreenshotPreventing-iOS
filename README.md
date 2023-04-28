@@ -106,10 +106,10 @@ import ScreenshotPreventingSwiftUI
 
 struct ContentView: View {
 
-    @State private var preventScreenShot = false
+    @State private var preventScreenshot = false
 
     var body: some View {
-        ScreenshotPrevent(isProtected: $preventScreenShot) {
+        ScreenshotPrevent(isProtected: preventScreenshot) {
             Text("Hello")
                 .padding()
                 .background(Color.yellow)
@@ -119,11 +119,31 @@ struct ContentView: View {
 }
 ```
 
+or using view modifier extension
+
+```swift
+import SwiftUI
+import ScreenshotPreventingSwiftUI
+
+struct ContentView: View {
+
+    @State private var preventScreenshot = false
+
+    var body: some View {
+        Text("Hello")
+            .padding()
+            .background(Color.yellow)
+            .cornerRadius(12)
+            .screenshotProtected(isProtected: preventScreenshot)
+    }
+}
+```
+
 ## RxSwift Extension
 
 If you use RxSwift in your project, there is a Rx extension to drive `preventScreenCapture` property on `ScreenshotPreventingView`.
 
-Use `RxScreenshotPreventing` pacakge for this extension.
+Use `RxScreenshotPreventing` package for this extension.
 
 ```swift
 whetherOrNotToPreventScreenshotObservable

@@ -10,11 +10,11 @@ import ScreenshotPreventingSwiftUI
 
 struct ContentView: View {
 
-    @State private var preventScreenShot = false
+    @State private var preventScreenshot = false
 
     var body: some View {
         VStack {
-            ScreenshotPrevent(isProtected: preventScreenShot) {
+            ScreenshotPrevent(isProtected: preventScreenshot) {
                 Text("Hello")
                     .padding()
                     .background(Color.yellow)
@@ -29,18 +29,18 @@ struct ContentView: View {
                         .cornerRadius(12)
                 }
             }
-            .screenshotProtected(isProtected: preventScreenShot) // <- view extension
+            .screenshotProtected(isProtected: preventScreenshot) // <- view extension
 
             hintText
 
-            Toggle("", isOn: $preventScreenShot)
+            Toggle("", isOn: $preventScreenshot)
                 .labelsHidden()
         }
         .padding()
     }
 
     var hintText: some View {
-        Text(preventScreenShot ? "Prevent screen shot" : "No protect")
+        Text(preventScreenshot ? "Prevent screen shot" : "No protect")
     }
 }
 
