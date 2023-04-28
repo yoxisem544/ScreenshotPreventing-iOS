@@ -14,23 +14,22 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ScreenshotPrevent(isProtected: $preventScreenShot) {
+            ScreenshotPrevent(isProtected: preventScreenShot) {
                 Text("Hello")
                     .padding()
                     .background(Color.yellow)
                     .cornerRadius(12)
             }
 
-            ScreenshotPrevent(isProtected: $preventScreenShot) {
-                ScrollView {
-                    ForEach(1...100, id: \.self) { row in
-                        Text("Hello \(row)")
-                            .padding()
-                            .background(Color.yellow)
-                            .cornerRadius(12)
-                    }
+            ScrollView {
+                ForEach(1...100, id: \.self) { row in
+                    Text("Hello \(row)")
+                        .padding()
+                        .background(Color.yellow)
+                        .cornerRadius(12)
                 }
             }
+            .screenshotProtected(isProtected: preventScreenShot) // <- view extension
 
             hintText
 
