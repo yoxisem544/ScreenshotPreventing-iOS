@@ -24,19 +24,27 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ScreenshotPreventing",
-            dependencies: []),
+            dependencies: [],
+            path: "Sources/Core"
+        ),
         .target(
             name: "ScreenshotPreventingSwiftUI",
-            dependencies: ["ScreenshotPreventing"]),
-        .target(name: "RxScreenshotPreventing",
+            dependencies: ["ScreenshotPreventing"],
+            path: "Sources/SwiftUI"
+        ),
+        .target(
+            name: "RxScreenshotPreventing",
             dependencies: [
                 "ScreenshotPreventing",
                 .product(name: "RxSwift", package: "RxSwift"),
                 .product(name: "RxCocoa", package: "RxSwift"),
-            ]),
+            ],
+            path: "Sources/RxSwift"
+        ),
         .testTarget(
             name: "ScreenshotPreventingTests",
-            dependencies: ["ScreenshotPreventing"]),
+            dependencies: ["ScreenshotPreventing"]
+        ),
     ],
     swiftLanguageVersions: [
         .v5
