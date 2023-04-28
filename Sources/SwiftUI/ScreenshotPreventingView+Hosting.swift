@@ -22,11 +22,13 @@ final class ScreenshotPreventingHostingViewController<Content: View>: UIViewCont
         }
     }
 
-    init(@ViewBuilder content: @escaping () -> Content) {
+    init(preventScreenCapture: Bool, @ViewBuilder content: @escaping () -> Content) {
+        self.preventScreenCapture = preventScreenCapture
         self.content = content
         super.init(nibName: nil, bundle: nil)
 
         setupUI()
+        wrapperView.preventScreenCapture = preventScreenCapture
     }
 
     required init?(coder: NSCoder) {

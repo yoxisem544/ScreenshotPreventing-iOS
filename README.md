@@ -20,7 +20,7 @@ To integrate ScreenshotPreventing into your Xcode project using Swift Package Ma
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.3.0"))
+    .package(url: "https://github.com/yoxisem544/ScreenshotPreventing.git", .upToNextMajor(from: "1.4.0"))
 ]
 ```
 
@@ -29,11 +29,11 @@ dependencies: [
 For ScreenshotPreventing, use the following entry in your Podfile:
 
 ```ruby
-pod 'ScreenshotPreventing', '~> 1.3.0'
+pod 'ScreenshotPreventing', '~> 1.4.0'
 # or 
-pod 'ScreenshotPreventing/RxSwift', '~> 1.3.0'
+pod 'ScreenshotPreventing/RxSwift', '~> 1.4.0'
 # or SwiftUI
-pod 'ScreenshotPreventing/SwiftUI', '~> 1.3.0'
+pod 'ScreenshotPreventing/SwiftUI', '~> 1.4.0'
 ```
 
 ## Demo Project
@@ -106,10 +106,10 @@ import ScreenshotPreventingSwiftUI
 
 struct ContentView: View {
 
-    @State private var preventScreenShot = false
+    @State private var preventScreenshot = false
 
     var body: some View {
-        ScreenshotPrevent(isProtected: $preventScreenShot) {
+        ScreenshotPrevent(isProtected: preventScreenshot) {
             Text("Hello")
                 .padding()
                 .background(Color.yellow)
@@ -119,11 +119,31 @@ struct ContentView: View {
 }
 ```
 
+or using view modifier extension
+
+```swift
+import SwiftUI
+import ScreenshotPreventingSwiftUI
+
+struct ContentView: View {
+
+    @State private var preventScreenshot = false
+
+    var body: some View {
+        Text("Hello")
+            .padding()
+            .background(Color.yellow)
+            .cornerRadius(12)
+            .screenshotProtected(isProtected: preventScreenshot)
+    }
+}
+```
+
 ## RxSwift Extension
 
 If you use RxSwift in your project, there is a Rx extension to drive `preventScreenCapture` property on `ScreenshotPreventingView`.
 
-Use `RxScreenshotPreventing` pacakge for this extension.
+Use `RxScreenshotPreventing` package for this extension.
 
 ```swift
 whetherOrNotToPreventScreenshotObservable
