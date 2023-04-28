@@ -11,6 +11,7 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "ScreenshotPreventing", targets: ["ScreenshotPreventing"]),
+        .library(name: "ScreenshotPreventingSwiftUI", targets: ["ScreenshotPreventingSwiftUI"]),
         .library(name: "RxScreenshotPreventing", targets: ["RxScreenshotPreventing"]),
     ],
     dependencies: [
@@ -23,16 +24,27 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ScreenshotPreventing",
-            dependencies: []),
-        .target(name: "RxScreenshotPreventing",
+            dependencies: [],
+            path: "Sources/Core"
+        ),
+        .target(
+            name: "ScreenshotPreventingSwiftUI",
+            dependencies: ["ScreenshotPreventing"],
+            path: "Sources/SwiftUI"
+        ),
+        .target(
+            name: "RxScreenshotPreventing",
             dependencies: [
                 "ScreenshotPreventing",
                 .product(name: "RxSwift", package: "RxSwift"),
                 .product(name: "RxCocoa", package: "RxSwift"),
-            ]),
+            ],
+            path: "Sources/RxSwift"
+        ),
         .testTarget(
             name: "ScreenshotPreventingTests",
-            dependencies: ["ScreenshotPreventing"]),
+            dependencies: ["ScreenshotPreventing"]
+        ),
     ],
     swiftLanguageVersions: [
         .v5
