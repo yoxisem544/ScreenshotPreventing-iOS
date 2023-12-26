@@ -47,6 +47,7 @@ final class ScreenshotPreventingHostingViewController<Content: View>: UIViewCont
 
         let hostVC = UIHostingController(rootView: content())
         hostVC.view.translatesAutoresizingMaskIntoConstraints = false
+        hostVC.view.backgroundColor = .clear
 
         addChild(hostVC)
         wrapperView.setup(contentView: hostVC.view)
