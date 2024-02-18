@@ -71,14 +71,14 @@ public final class ScreenshotPreventingView: UIView {
             container.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
-        guard let contentView = contentView else { return }
-        setup(contentView: contentView)
-
         DispatchQueue.main.async {
             // setting secure text entry in init block will fail
             // setting default value inside main thread
             self.preventScreenCapture = true
         }
+
+        guard let contentView = contentView else { return }
+        setup(contentView: contentView)
     }
 
     // MARK: - 🚌 Public Methods
